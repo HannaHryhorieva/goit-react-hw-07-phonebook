@@ -1,38 +1,35 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.phonebookAdd {
+  border: 1px solid black;
+  padding: 20px;
+  margin-left: 20px;
+  width: 300px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.phonebookAdd-label {
+  display: block;
+  margin-bottom: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.phonebookAdd-input {
+  display: block;
 }
-
-.App-link {
-  color: #61dafb;
+.phonebook-title {
+  margin-left: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter-label {
+  display: block;
+  margin-left: 20px;
+}
+.filter-input {
+  display: block;
+}
+.contact-list {
+  margin-left: 20px;
+}
+.contacts-item {
+  margin-bottom: 10px;
+}
+.contacts-item-name {
+  margin-right: 10px;
 }
