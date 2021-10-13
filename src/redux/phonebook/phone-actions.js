@@ -20,16 +20,4 @@ export const deleteContactSuccess = createAction(
 );
 export const deleteContactError = createAction('phonebook/deleteContactError');
 
-// const addContact = createAction('phonebook/add', ([name, number]) => ({
-//   payload: {
-//     id: shortid.generate(),
-//     name: name,
-//     number: number,
-//   },
-// }));
-
-// const deleteContact = createAction('phonebook/delete');
-
 export const changeFilter = createAction('phonebook/changeFilter');
-
-// export default { addContact, deleteContact, changeFilter };

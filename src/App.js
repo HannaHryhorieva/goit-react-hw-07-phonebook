@@ -7,8 +7,10 @@ import Filter from './components/Filter/Filter';
 export default function App() {
   return (
     <div>
-      <h2 className="phonebook-title">Phonebook</h2>
-      <ContactForm />
+      <div>
+        <h2 className="phonebook-title">Phonebook</h2>
+        <ContactForm />
+      </div>
 
       <h3 className="phonebook-title">Contacts</h3>
       <Filter />

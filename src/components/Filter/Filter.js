@@ -1,12 +1,11 @@
-// import PropTypes from 'prop-types';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { getFilter } from '../../redux/phonebook/phone-selectors';
 
-// import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/phonebook/phone-actions';
 
 function Filter() {
-  const value = useSelector(state => state.contacts.filter);
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
 
   return (
@@ -22,13 +21,4 @@ function Filter() {
   );
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   onChange: e => dispatch(changeFilter(e.target.value)),
-// });
-
 export default Filter;
-
-// Filter.propTypes = {
-//   value: PropTypes.string,
-//   onChange: PropTypes.func,
-// };

@@ -12,7 +12,6 @@ import {
   fetchContactsSuccess,
   fetchContactsError,
 } from './phone-actions';
-// import actions from './phone-actions';
 
 const items = createReducer([], {
   [fetchContactsSuccess]: (_, { payload }) => payload,

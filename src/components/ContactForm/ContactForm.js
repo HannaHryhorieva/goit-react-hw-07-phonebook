@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { connect } from 'react-redux';
+import { getAllContacts } from '../../redux/phonebook/phone-selectors';
 import phoneOperations from '../../redux/phonebook/phone-operations';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(state => state.contacts.items);
+  const contacts = useSelector(getAllContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -70,12 +70,5 @@ const ContactForm = () => {
     </form>
   );
 };
-// const mapStateToProps = state => ({
-//   contacts: state.contacts.items,
-// });
-// const mapDispatchToProps = dispatch => ({
-//   onSubmit: ([name, number]) =>
-//     dispatch(phoneOperations.addContact([name, number])),
-// });
 
 export default ContactForm;

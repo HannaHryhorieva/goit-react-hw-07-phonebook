@@ -1,18 +1,15 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useState, useEffect } from 'react';
-// import { connect } from 'react-redux';
-import phoneOperations from '../../redux/phonebook/phone-operations';
 
-import PropTypes from 'prop-types';
+import phoneOperations from '../../redux/phonebook/phone-operations';
+import { getVisibleContacts } from '../../redux/phonebook/phone-selectors';
 
 const Contacts = () => {
-  const items = useSelector(state => state.contacts.items);
-  const filter = useSelector(state => state.contacts.filter);
   const dispatch = useDispatch();
 
   useEffect(() => dispatch(phoneOperations.fetchContacts()), [dispatch]);
-  const contacts = getVisibleContacts(items, filter);
+
+  const contacts = useSelector(getVisibleContacts);
 
   return (
     <ul className="contact-list">
@@ -33,24 +30,4 @@ const Contacts = () => {
   );
 };
 
-const getVisibleContacts = (contacts, filterV) => {
-  const normalizedFilter = filterV.toLowerCase();
-
-  return contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalizedFilter),
-  );
-};
-
-// const mapStateToProps = ({ contacts: { items, filter } }) => ({
-//   contacts: getVisibleContacts(items, filter),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onDeleteContact: id => dispatch(phoneOperations.deleteContact(id)),
-//   fetchContacts: () => dispatch(phoneOperations.fetchContacts()),
-// });
-Contacts.propTypes = {
-  contacts: PropTypes.array,
-  onDeleteContact: PropTypes.func,
-};
 export default Contacts;
